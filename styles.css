@@ -108,6 +108,19 @@ header h1 {
   background-color: #f9f6ee;
   color: #bfa45b;
 }
+/* Submenú visible cuando se activa por clic (móvil) */
+.submenu.activo {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Asegurar que los enlaces del submenu reciban clic */
+.submenu a {
+  pointer-events: auto !important;
+  z-index: 9999;
+  position: relative;
+}
 
 /* ======== MOSTRAR SUBMENÚ AL PASAR EL MOUSE ======== */
 .dropdown:hover .submenu {
@@ -334,6 +347,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
