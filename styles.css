@@ -4,16 +4,16 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f8f9fb;
   color: #1a1a1a;
+  padding-top: 150px; /* para evitar que el header fijo tape el contenido */
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  header {
   background-color: #ffffff;
   color: #0d1b2a;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: fixed;   
@@ -24,9 +24,8 @@ header {
 }
 
 header .logo {
-  height: 150px; /* Un poco más pequeño para armonía visual */
+  height: 120px;
   width: auto;
-  margin-right: 10px; /* Logo más pegado al texto */
   transition: transform 0.3s ease;
 }
 
@@ -34,18 +33,15 @@ header .logo:hover {
   transform: scale(1.05);
 }
 
-/* ======== TÍTULO DE LA EMPRESA ======== */
+/* ======== TÍTULO ======== */
 header h1 {
-  font-size: 2.4rem; /* Más grande */
-  font-weight: 1200;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
   margin: 0;
+  text-transform: uppercase;
   background: linear-gradient(90deg, #bfa45b, #e6d098, #bfa45b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 5px rgba(191, 164, 91, 0.3);
-  flex-grow: 1;
 }
 
 /* ======== MENÚ PRINCIPAL ======== */
@@ -53,7 +49,7 @@ header h1 {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -68,7 +64,7 @@ header h1 {
   font-weight: 600;
   font-size: 1rem;
   padding: 10px 5px;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .menu a:hover {
@@ -81,285 +77,137 @@ header h1 {
   position: absolute;
   top: 120%;
   left: 0;
-  background-color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  background: #ffffff;
   border-radius: 10px;
-  list-style: none;
   padding: 10px 0;
-  margin: 0;
-  min-width: 210px;
-  z-index: 100;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 2000;
 }
 
-.submenu li {
-  width: 100%;
-}
-
-.submenu li a {
-  display: block;
-  padding: 10px 20px;
-  color: #0d1b2a;
-  font-size: 0.95rem;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.submenu li a:hover {
-  background-color: #f9f6ee;
-  color: #bfa45b;
-}
-/* Submenú visible cuando se activa por clic (móvil) */
-.submenu.activo {
-  display: block !important;
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Asegurar que los enlaces del submenu reciban clic */
-.submenu a {
-  pointer-events: auto !important;
-  z-index: 9999;
-  position: relative;
-}
-
-/* ======== MOSTRAR SUBMENÚ AL PASAR EL MOUSE ======== */
 .dropdown:hover .submenu {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Flechita dorada animada */
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  transition: 0.3s ease;
+}
+
+.submenu li a:hover {
+  background: #f7f7f7;
+  color: #bfa45b;
+}
+
+/* Activación para móviles */
+.submenu.activo {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 .dropdown > a::after {
   content: " ▼";
-  font-size: 0.7em;
   color: #bfa45b;
-  transition: transform 0.3s ease;
+  font-size: 0.7em;
 }
 
-.dropdown:hover > a::after {
-  transform: rotate(180deg);
-}
-/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
+/* ======== HERO ======== */
 .hero {
-  background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
+  background: linear-gradient(rgba(13,27,42,0.7), rgba(13,27,42,0.7)),
               url("img/fondo.jpg") center/cover no-repeat;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  min-height: 85vh;
-  padding: 80px 20px;
+  padding: 120px 20px;
 }
 
-.hero .overlay {
-  background: rgba(13, 27, 42, 0.65);
-  padding: 60px 50px;
-  border-radius: 20px;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero .overlay:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 35px rgba(191, 164, 91, 0.4);
-}
-
-/* ---- TÍTULO DORADO ANIMADO ---- */
 .hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
-  font-weight: 700;
+  font-size: 2.6rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(
-    90deg,
-    #bfa45b 0%,
-    #e8c87b 20%,
-    #c9a94f 40%,
-    #e6d098 60%,
-    #bfa45b 80%,
-    #d8bc6b 100%
-  );
-  background-size: 200%;
-  background-position: 0%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 12px rgba(255, 255, 255, 0.3),
-    0 0 25px rgba(255, 255, 255, 0.2);
-  animation: shine 4s linear infinite;
-}
-
-@keyframes shine {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  line-height: 1.9;
-  color: #f5f5f5;
-  text-align: justify;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
+  line-height: 1.8;
 }
 
 /* ======== SERVICIOS ======== */
-section.light {
-  background-color: #ffffff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-section.light h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #0d1b2a;
-}
-
 .servicios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 30px;
+  gap: 25px;
   max-width: 1100px;
   margin: auto;
 }
 
 .servicio {
   background: #f0f0f0;
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
+  text-align: center;
   transition: 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.servicio:hover {
-  background: #fdf8ef;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(191,164,91,0.3);
 }
 
 .servicio i {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: #bfa45b;
   margin-bottom: 10px;
 }
 
 /* ======== PROYECTOS ======== */
-section.dark {
-  background-color: #0d1b2a;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-section.dark h2 {
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #e8c87b;
-}
-
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
+  margin: auto;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.proyecto {
-  background: #142c45;
-  border-radius: 15px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  cursor: pointer;
-}
-
-.proyecto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(191,164,91,0.4);
 }
 
 .proyecto img {
   width: 100%;
-  height: 230px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.proyecto img:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
-}
-
-.proyecto h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 5px;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border-radius: 10px;
 }
 
 /* ======== CONTACTO ======== */
-#contacto {
-  background: #f8f9fb;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-#contacto h2 {
-  color: #0d1b2a;
-  margin-bottom: 20px;
-}
-
 .redes a {
   font-size: 2rem;
+  margin: 0 10px;
   color: #0d1b2a;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .redes a:hover {
   transform: scale(1.2);
 }
 
-.whatsapp:hover { color: #25D366; }
-.facebook:hover { color: #1877F2; }
-.instagram:hover { color: #E1306C; }
-.gmail:hover { color: #D44638; }
-
 /* ======== FOOTER ======== */
 footer {
-  background-color: #0d1b2a;
+  background: #0d1b2a;
   color: white;
   text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
+  padding: 20px;
 }
-/* ============================
+
+/* ==========================================
    RESPONSIVE PARA CELULARES
-   ============================ */
+========================================== */
 @media (max-width: 768px) {
 
-  /* Header más pequeño */
   header {
-    padding: 5px 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    padding: 15px 10px;
   }
 
   header .logo {
@@ -368,76 +216,40 @@ footer {
 
   header h1 {
     font-size: 1.4rem;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 10px;
   }
 
-  /* Menú en versión columna */
   .menu {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .menu a {
-    font-size: 0.95rem;
-    padding: 8px 0;
-  }
-
-  /* Submenú ocupa ancho completo */
   .submenu {
     position: relative;
     min-width: 100%;
     box-shadow: none;
     border-radius: 8px;
-    opacity: 1;
-    transform: translateY(0);
   }
 
-  .submenu li a {
-    padding: 10px 15px;
-  }
-
-  /* Hero */
-  .hero {
-    min-height: 60vh;
-    padding: 40px 15px;
+  body {
+    padding-top: 200px;
   }
 
   .hero h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero p {
     font-size: 1rem;
   }
 
-  /* Grillas de servicios y proyectos */
-  .servicios-grid,
   .galeria {
     grid-template-columns: 1fr;
   }
 
   .proyecto img {
-    height: 200px;
+    height: 180px;
   }
 
-  /* Ajuste del body por header fixed */
-  body {
-    padding-top: 140px;
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
