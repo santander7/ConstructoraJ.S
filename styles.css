@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f8f9fb; /* fondo general claro */
+  background-color: #f8f9fb;
   color: #1a1a1a;
 }
 
@@ -12,17 +12,19 @@ header {
   color: #0d1b2a;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 70px;
+  justify-content: flex-start;
+  padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  gap: 15px; /* Espacio mínimo entre logo y texto */
 }
 
 header .logo {
-  height: 100px; /* Tamaño ideal para no saturar */
+  height: 90px; /* Un poco más pequeño para armonía visual */
   width: auto;
+  margin-right: 10px; /* Logo más pegado al texto */
   transition: transform 0.3s ease;
 }
 
@@ -30,22 +32,25 @@ header .logo:hover {
   transform: scale(1.05);
 }
 
+/* ======== TÍTULO DE LA EMPRESA ======== */
 header h1 {
-  flex-grow: 1;
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.4rem; /* Más grande */
+  font-weight: 800;
   letter-spacing: 1px;
-  text-align: center;
   text-transform: uppercase;
-  color: #bfa45b; /* Dorado suave */
   margin: 0;
-  text-shadow: 1px 1px 3px rgba(191, 164, 91, 0.3);
+  background: linear-gradient(90deg, #bfa45b, #e6d098, #bfa45b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 5px rgba(191, 164, 91, 0.3);
+  flex-grow: 1;
 }
 
 /* ======== MENÚ DE NAVEGACIÓN ======== */
 header nav {
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 header nav a {
@@ -64,7 +69,7 @@ header nav a.activo {
   padding-bottom: 2px;
 }
 
-/* Ajuste responsive */
+/* ======== AJUSTE RESPONSIVE ======== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -78,14 +83,14 @@ header nav a.activo {
   }
 
   header h1 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 }
+
 /* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
   background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
               url("img/fondo.jpg") center/cover no-repeat;
-  position: relative;
   color: #fff;
   display: flex;
   justify-content: center;
