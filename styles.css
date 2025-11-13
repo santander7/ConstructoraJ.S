@@ -8,17 +8,19 @@ body {
 
 /* ======== ENCABEZADO ======== */
 header {
-  background-color: #ffffff; /* Blanco para que se mezcle con el logo */
+  header {
+  background-color: #ffffff;
   color: #0d1b2a;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;   
+  width: 100%;       
   top: 0;
   z-index: 1000;
-  gap: 15px; /* Espacio mínimo entre logo y texto */
+  gap: 15px;
 }
 
 header .logo {
@@ -347,13 +349,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
-.ancla {
-  position: relative;
-  top: -140px;     /* ajusta si tu header es más alto */
-  height: 0;
-  display: block;
-  visibility: hidden;
-}
+
 
 
 
