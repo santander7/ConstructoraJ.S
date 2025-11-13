@@ -2,14 +2,14 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
+  background-color: #f8f9fb; /* fondo general claro */
+  color: #1a1a1a;
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  background-color: #ffffff; /* Blanco para combinar con el logo */
-  color: #0b1b3a;
+  background-color: #ffffff; /* 🔹 blanco para combinar con el logo */
+  color: #0d1b2a; /* azul oscuro elegante */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,8 +34,9 @@ header h1 {
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  color: #0b1b3a;
+  color: #bfa45b; /* dorado suave */
   margin: 0;
+  text-shadow: 1px 1px 3px rgba(191, 164, 91, 0.3);
 }
 
 /* ======== MENÚ DE NAVEGACIÓN ======== */
@@ -45,20 +46,20 @@ header nav {
 }
 
 header nav a {
-  color: #0b1b3a;
+  color: #0d1b2a; /* azul oscuro */
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav a:hover {
-  color: #d4af37; /* Dorado */
+  color: #bfa45b; /* dorado al pasar el cursor */
   transform: scale(1.1);
 }
 
 /* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
-  background: linear-gradient(rgba(11, 27, 58, 0.8), rgba(11, 27, 58, 0.8)),
+  background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
               url("img/fondo.jpg") center/cover no-repeat;
   position: relative;
   color: #fff;
@@ -71,7 +72,7 @@ header nav a:hover {
 }
 
 .hero .overlay {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(13, 27, 42, 0.65);
   padding: 60px 50px;
   border-radius: 20px;
   max-width: 900px;
@@ -82,7 +83,7 @@ header nav a:hover {
 
 .hero .overlay:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 35px rgba(191, 164, 91, 0.4);
 }
 
 /* ---- TÍTULO DORADO ANIMADO ---- */
@@ -92,13 +93,22 @@ header nav a:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #d4af37 0%, #f9e7a1 50%, #d4af37 100%);
+  background: linear-gradient(
+    90deg,
+    #bfa45b 0%,
+    #e8c87b 20%,
+    #c9a94f 40%,
+    #e6d098 60%,
+    #bfa45b 80%,
+    #d8bc6b 100%
+  );
   background-size: 200%;
+  background-position: 0%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 
-    0 0 12px rgba(255, 255, 255, 0.2),
-    0 0 25px rgba(212, 175, 55, 0.2);
+    0 0 12px rgba(255, 255, 255, 0.3),
+    0 0 25px rgba(255, 255, 255, 0.2);
   animation: shine 4s linear infinite;
 }
 
@@ -117,20 +127,26 @@ header nav a:hover {
 }
 
 /* ===== BUSCADOR ===== */
+.buscador {
+  text-align: center;
+  margin: 30px auto;
+  padding: 10px;
+}
+
 .buscador input {
   width: 80%;
   max-width: 600px;
   padding: 12px 16px;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: 2px solid #bfa45b;
   border-radius: 25px;
   transition: 0.3s;
 }
 
 .buscador input:focus {
   outline: none;
-  border-color: #d4af37;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  border-color: #0d1b2a;
+  box-shadow: 0 0 8px rgba(13, 27, 42, 0.3);
 }
 
 /* ======== SERVICIOS ======== */
@@ -143,32 +159,40 @@ section.light {
 section.light h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #0b1b3a;
+  color: #0d1b2a;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .servicio {
-  background: #f9f9f9;
+  background: #f0f0f0;
   padding: 25px;
   border-radius: 15px;
   transition: 0.3s ease;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  border-top: 3px solid #d4af37;
 }
 
 .servicio:hover {
-  background: #fff8e1;
+  background: #fdf8ef;
   transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(191,164,91,0.3);
 }
 
 .servicio i {
   font-size: 2.5rem;
-  color: #0b1b3a;
+  color: #bfa45b;
   margin-bottom: 10px;
 }
 
 /* ======== PROYECTOS ======== */
 section.dark {
-  background-color: #0b1b3a;
+  background-color: #0d1b2a;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -180,51 +204,87 @@ section.dark h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #d4af37;
+  color: #e8c87b;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .proyecto {
-  background: #13264d;
+  background: #142c45;
   border-radius: 15px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
 }
 
 .proyecto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 20px rgba(191,164,91,0.4);
+}
+
+.proyecto img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.proyecto img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.proyecto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* ======== CONTACTO ======== */
 #contacto {
-  background: #f4f4f4;
+  background: #f8f9fb;
   padding: 60px 20px;
   text-align: center;
 }
 
 #contacto h2 {
-  color: #0b1b3a;
+  color: #0d1b2a;
   margin-bottom: 20px;
 }
 
 .redes a {
   font-size: 2rem;
-  color: #0b1b3a;
+  color: #0d1b2a;
   transition: 0.3s;
 }
 
 .redes a:hover {
-  color: #d4af37;
   transform: scale(1.2);
 }
 
+.whatsapp:hover { color: #25D366; }
+.facebook:hover { color: #1877F2; }
+.instagram:hover { color: #E1306C; }
+.gmail:hover { color: #D44638; }
+
 /* ======== FOOTER ======== */
 footer {
-  background-color: #0b1b3a;
+  background-color: #0d1b2a;
   color: white;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
-  border-top: 2px solid #d4af37;
 }
