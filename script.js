@@ -94,14 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll('.dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
-    if (window.innerWidth <= 768) {
+    // SOLO bloquear clic en celulares
+    if (window.innerWidth <= 768) {  
       const submenu = link.nextElementSibling;
 
-      // Evita bloquear enlaces internos
-      if (!submenu || !submenu.classList.contains('submenu')) return;
-
-      e.preventDefault(); 
-      submenu.classList.toggle('open');
+      if (submenu && submenu.classList.contains('submenu')) {
+        e.preventDefault();
+        submenu.classList.toggle('open'); 
+      }
     }
   });
 });
