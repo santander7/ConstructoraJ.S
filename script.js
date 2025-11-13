@@ -92,15 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-<script>
-  document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const submenu = link.nextElementSibling;
-        submenu.style.display =
-          submenu.style.display === 'block' ? 'none' : 'block';
-      }
-    });
+document.querySelectorAll('.dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const submenu = link.nextElementSibling;
+      submenu.style.display =
+        submenu.style.display === 'block' ? 'none' : 'block';
+    }
   });
-</script>
+});
+
