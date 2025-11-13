@@ -22,7 +22,7 @@ header {
 }
 
 header .logo {
-  height: 250px; /* Un poco más pequeño para armonía visual */
+  height: 150px; /* Un poco más pequeño para armonía visual */
   width: auto;
   margin-right: 10px; /* Logo más pegado al texto */
   transition: transform 0.3s ease;
@@ -354,6 +354,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
