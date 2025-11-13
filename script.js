@@ -83,4 +83,26 @@ images.forEach(image => {
 lightbox.addEventListener('click', () => {
   lightbox.classList.remove('active');
 });
+// ---- LIGHTBOX DE IMÁGENES ----
+const images = document.querySelectorAll('.proyecto img');
+const lightbox = document.createElement('div');
+lightbox.classList.add('lightbox');
+document.body.appendChild(lightbox);
+
+const img = document.createElement('img');
+lightbox.appendChild(img);
+
+// Mostrar imagen al hacer clic
+images.forEach(image => {
+  image.addEventListener('click', () => {
+    img.src = image.src;
+    lightbox.classList.add('active');
+  });
+});
+
+// Cerrar lightbox al hacer clic fuera
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
 
