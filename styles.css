@@ -2,71 +2,67 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f8f9fb;
+  background-color: #f4f6f9;
   color: #1a1a1a;
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  background-color: #ffffff; /* Blanco para mezclar con el logo */
+  background-color: #ffffff;
   color: #0d1b2a;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  gap: 15px; /* Espacio entre logo y texto */
 }
 
 header .logo {
-  height: 150px;
+  height: 110px;
   width: auto;
-  margin-right: 10px;
   transition: transform 0.3s ease;
 }
 
 header .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* ======== TÍTULO DE LA EMPRESA ======== */
+/* ======== TÍTULO ======== */
 header h1 {
-  font-size: 2.4rem;
-  font-weight: 1200;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 900;
   margin: 0;
-  background: linear-gradient(90deg, #bfa45b, #e6d098, #bfa45b);
+  background: linear-gradient(90deg, #bfa45b, #e8d6a2, #bfa45b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 5px rgba(191, 164, 91, 0.3);
-  flex-grow: 1;
+  text-shadow: 1px 1px 4px rgba(191, 164, 91, 0.25);
 }
 
-/* ======== MENÚ PRINCIPAL ======== */
+/* ======== MENÚ ======== */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
   margin: 0;
   padding: 0;
-}
-
-.menu li {
-  position: relative;
 }
 
 .menu a {
   text-decoration: none;
   color: #0d1b2a;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 10px 5px;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  padding: 8px 5px;
+  transition: 0.3s ease;
 }
 
 .menu a:hover {
@@ -74,167 +70,121 @@ header h1 {
 }
 
 /* ======== SUBMENÚ ======== */
+.dropdown {
+  position: relative;
+}
+
 .submenu {
   display: none;
   position: absolute;
   top: 120%;
   left: 0;
   background-color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   border-radius: 10px;
-  list-style: none;
   padding: 10px 0;
-  margin: 0;
-  min-width: 210px;
-  z-index: 100;
+  min-width: 200px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
+  transform: translateY(5px);
+  transition: 0.25s ease;
+  z-index: 99;
 }
 
-.submenu li {
-  width: 100%;
-}
-
-.submenu li a {
-  display: block;
-  padding: 10px 20px;
-  color: #0d1b2a;
-  font-size: 0.95rem;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.submenu li a:hover {
-  background-color: #f9f6ee;
-  color: #bfa45b;
-}
-
-/* Submenú visible en móvil */
-.submenu.activo {
-  display: block !important;
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Para que los enlaces sí reciban clic */
-.submenu a {
-  pointer-events: auto !important;
-  z-index: 9999;
-  position: relative;
-}
-
-/* Hover en PC */
 .dropdown:hover .submenu {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Flechita dorada */
+.submenu li a {
+  display: block;
+  padding: 10px 18px;
+  color: #0d1b2a;
+  transition: 0.25s;
+}
+
+.submenu li a:hover {
+  background: #f4ecd3;
+  color: #bfa45b;
+}
+
 .dropdown > a::after {
   content: " ▼";
-  font-size: 0.7em;
+  font-size: 0.65em;
   color: #bfa45b;
-  transition: transform 0.3s ease;
 }
 
-.dropdown:hover > a::after {
-  transform: rotate(180deg);
-}
-
-/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
+/* ======== HERO ======== */
 .hero {
-  background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
+  background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)),
   url("img/fondo.jpg") center/cover no-repeat;
+  min-height: 80vh;
   color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  min-height: 85vh;
   padding: 80px 20px;
 }
 
 .hero .overlay {
-  background: rgba(13, 27, 42, 0.65);
-  padding: 60px 50px;
-  border-radius: 20px;
+  background: rgba(13, 27, 42, 0.55);
+  padding: 50px;
+  border-radius: 15px;
   max-width: 900px;
-  width: 90%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .hero .overlay:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 35px rgba(191, 164, 91, 0.4);
+  transform: scale(1.015);
 }
 
-/* TÍTULO DORADO ANIMADO */
 .hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
-  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
 
-  background: linear-gradient(
-    90deg,
-    #bfa45b 0%,
-    #e8c87b 20%,
-    #c9a94f 40%,
-    #e6d098 60%,
-    #bfa45b 80%,
-    #d8bc6b 100%
-  );
-  background-size: 200%;
-  background-position: 0%;
+  background: linear-gradient(90deg, #bfa45b, #f1e0ac, #bfa45b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3),
-               0 0 25px rgba(255, 255, 255, 0.2);
-
-  animation: shine 4s linear infinite;
+  animation: brillo 5s linear infinite;
 }
 
-@keyframes shine {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
+@keyframes brillo {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
 
 .hero p {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: #f5f5f5;
-  text-align: justify;
-  max-width: 800px;
-  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 /* ======== SERVICIOS ======== */
 section.light {
-  background-color: #ffffff;
-  padding: 60px 20px;
+  background: #ffffff;
+  padding: 70px 20px;
   text-align: center;
 }
 
 section.light h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
   color: #0d1b2a;
+  font-size: 2rem;
+  margin-bottom: 25px;
 }
 
 .servicios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: auto;
 }
 
 .servicio {
-  background: #f0f0f0;
+  background: #f3f3f3;
   padding: 25px;
   border-radius: 15px;
   transition: 0.3s ease;
@@ -242,119 +192,100 @@ section.light h2 {
 }
 
 .servicio:hover {
-  background: #fdf8ef;
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(191,164,91,0.3);
+  box-shadow: 0 8px 16px rgba(191,164,91,0.35);
+  background: #fdf7eb;
 }
 
 .servicio i {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: #bfa45b;
-  margin-bottom: 10px;
 }
 
 /* ======== PROYECTOS ======== */
 section.dark {
-  background-color: #0d1b2a;
+  background: #0d1b2a;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
 }
 
 section.dark h2 {
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: #e8c87b;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 10px;
+  margin: auto;
 }
 
 .proyecto {
-  background: #142c45;
-  border-radius: 15px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  cursor: pointer;
+  background: #13283f;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
 }
 
 .proyecto:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(191,164,91,0.4);
 }
 
 .proyecto img {
   width: 100%;
-  height: 230px;
+  height: 210px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
 }
 
 .proyecto img:hover {
   transform: scale(1.03);
-  opacity: 0.9;
 }
 
 .proyecto h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1rem;
   margin-top: 5px;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #f4f4f4;
 }
 
 /* ======== CONTACTO ======== */
 #contacto {
-  background: #f8f9fb;
   padding: 60px 20px;
   text-align: center;
-}
-
-#contacto h2 {
-  color: #0d1b2a;
-  margin-bottom: 20px;
+  background: #f4f6f9;
 }
 
 .redes a {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin: 10px;
   color: #0d1b2a;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .redes a:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
-
-.whatsapp:hover { color: #25D366; }
-.facebook:hover { color: #1877F2; }
-.instagram:hover { color: #E1306C; }
-.gmail:hover { color: #D44638; }
 
 /* ======== FOOTER ======== */
 footer {
-  background-color: #0d1b2a;
+  background: #0d1b2a;
   color: white;
+  padding: 18px 0;
   text-align: center;
-  padding: 20px 0;
   font-size: 0.9rem;
 }
 
 .ancla {
   position: relative;
-  top: -140px;
+  top: -130px;
   height: 0;
   display: block;
   visibility: hidden;
