@@ -91,3 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// === FILTRO DE SERVICIOS Y PROYECTOS ===
+function filtrarContenido() {
+  const filtro = document.getElementById("searchInput").value.toLowerCase();
+
+  // Filtrar SERVICIOS
+  const servicios = document.querySelectorAll(".servicio");
+  servicios.forEach(servicio => {
+    const texto = servicio.innerText.toLowerCase();
+    servicio.style.display = texto.includes(filtro) ? "block" : "none";
+  });
+
+  // Filtrar PROYECTOS
+  const proyectos = document.querySelectorAll(".proyecto");
+  proyectos.forEach(proyecto => {
+    const texto = proyecto.innerText.toLowerCase();
+    proyecto.style.display = texto.includes(filtro) ? "block" : "none";
+  });
+}
