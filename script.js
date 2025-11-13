@@ -95,11 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll('.dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
     if (window.innerWidth <= 768) {
-      e.preventDefault();
       const submenu = link.nextElementSibling;
-      submenu.style.display =
-        submenu.style.display === 'block' ? 'none' : 'block';
+
+      // Evita bloquear enlaces internos
+      if (!submenu || !submenu.classList.contains('submenu')) return;
+
+      e.preventDefault(); 
+      submenu.classList.toggle('open');
     }
   });
 });
+
 
