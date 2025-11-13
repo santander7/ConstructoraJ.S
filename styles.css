@@ -349,6 +349,85 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+/* ============================
+   RESPONSIVE PARA CELULARES
+   ============================ */
+@media (max-width: 768px) {
+
+  /* Header más pequeño */
+  header {
+    padding: 5px 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  header .logo {
+    height: 90px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Menú en versión columna */
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+
+  /* Submenú ocupa ancho completo */
+  .submenu {
+    position: relative;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 8px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .submenu li a {
+    padding: 10px 15px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 60vh;
+    padding: 40px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Grillas de servicios y proyectos */
+  .servicios-grid,
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .proyecto img {
+    height: 200px;
+  }
+
+  /* Ajuste del body por header fixed */
+  body {
+    padding-top: 140px;
+  }
+}
+
 
 
 
