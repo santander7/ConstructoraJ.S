@@ -252,8 +252,8 @@ section.dark h2 {
 }
 
 .lightbox img {
-  max-width: 55%;
-  max-height: 65%;
+  max-width: 90%;
+  max-height: 85%;
   border-radius: 18px;
   box-shadow: 0 0 20px rgba(255,255,255,0.25);
   animation: zoomIn 0.3s ease;
@@ -261,13 +261,14 @@ section.dark h2 {
   transition: transform 0.3s ease;
 }
 
+/* Pequeño zoom al pasar el mouse */
 .lightbox img:hover {
-  transform: scale(1.02);
+  transform: scale(2.02);
 }
 
 @keyframes zoomIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from { transform: scale(1.85); opacity: 1; }
+  to { transform: scale(2); opacity: 0; }
 }
 
 /* ---- Ajuste RESPONSIVO ---- */
@@ -275,28 +276,26 @@ section.dark h2 {
 /* Móviles pequeños */
 @media (max-width: 480px) {
   .lightbox img {
-    max-width: 90%;
-    max-height: 70%;
-    border-radius: 12px;
+    max-width: 90% !important;
+    max-height: 70% !important;
   }
 }
 
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
   .lightbox img {
-    max-width: 75%;
-    max-height: 70%;
+    max-width: 70% !important;
+    max-height: 70% !important;
   }
 }
 
 /* Escritorio grande */
 @media (min-width: 1025px) {
   .lightbox img {
-    max-width: 45%;
-    max-height: 65%;
+    max-width: 40% !important;
+    max-height: 60% !important;
   }
 }
-
 /* ======== MODALES ======== */
 .modal {
   display: none;
@@ -426,6 +425,7 @@ footer {
     text-align: center;
   }
 }
+
 
 
 
