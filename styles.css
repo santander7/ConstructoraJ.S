@@ -46,14 +46,13 @@ header h1 {
   flex-grow: 1;
 }
 
-/* ======== MENÚ DESPLEGABLE ======== */
+/* ======== MENÚ PRINCIPAL ======== */
 .menu {
   list-style: none;
   display: flex;
+  gap: 2rem;
   align-items: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
 }
 
 .menu li {
@@ -65,65 +64,53 @@ header h1 {
   color: #0d1b2a;
   font-weight: 600;
   font-size: 1rem;
-  padding: 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s;
 }
 
 .menu a:hover {
   color: #bfa45b;
 }
 
-/* ---- Submenús ---- */
-.submenu {
-  display: none;
+/* ======== SUBMENÚ ======== */
+.submenu-items {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   list-style: none;
-  padding: 10px 0;
-  margin: 0;
+  display: none;
   min-width: 200px;
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  z-index: 10;
 }
 
-.submenu li a {
-  display: block;
-  padding: 10px 20px;
+.submenu-items li {
+  padding: 0.5rem 1rem;
+}
+
+.submenu-items li a {
   color: #0d1b2a;
-  font-size: 0.95rem;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.submenu li a:hover {
-  background-color: #f9f6ee;
-  color: #bfa45b;
-}
-
-/* ---- Mostrar submenú al pasar el mouse ---- */
-.dropdown:hover .submenu {
+  font-weight: 500;
   display: block;
-  opacity: 1;
-  transform: translateY(0);
 }
 
-/* ---- Flecha dorada animada ---- */
-.dropdown > a::after {
-  content: " ▼";
-  font-size: 0.7em;
-  color: #bfa45b;
-  transition: transform 0.3s ease;
+.submenu-items li a:hover {
+  background-color: #bfa45b;
+  color: #fff;
+  border-radius: 5px;
 }
 
-.dropdown:hover > a::after {
-  transform: rotate(180deg);
+/* Mostrar el submenú al pasar el mouse */
+.submenu:hover .submenu-items {
+  display: block;
 }
 
+/* Evita que el submenú corte su sombra */
+header {
+  overflow: visible;
+}
 /* ---- Ajuste Responsive ---- */
 @media (max-width: 768px) {
   .menu {
@@ -367,6 +354,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
