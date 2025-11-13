@@ -347,6 +347,13 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+.ancla {
+  position: relative;
+  top: -140px;     /* ajusta si tu header es más alto */
+  height: 0;
+  display: block;
+  visibility: hidden;
+}
 
 
 
