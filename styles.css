@@ -50,9 +50,10 @@ header h1 {
 .menu {
   list-style: none;
   display: flex;
-  gap: 2rem;
   align-items: center;
-  justify-content: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
@@ -64,7 +65,8 @@ header h1 {
   color: #0d1b2a;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s;
+  padding: 10px 5px;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
@@ -72,81 +74,60 @@ header h1 {
 }
 
 /* ======== SUBMENÚ ======== */
-.submenu-items {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  list-style: none;
+.submenu {
   display: none;
-  min-width: 200px;
-  padding: 0.5rem 0;
-  z-index: 10;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 210px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
-.submenu-items li {
-  padding: 0.5rem 1rem;
+.submenu li {
+  width: 100%;
 }
 
-.submenu-items li a {
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
   color: #0d1b2a;
-  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #f9f6ee;
+  color: #bfa45b;
+}
+
+/* ======== MOSTRAR SUBMENÚ AL PASAR EL MOUSE ======== */
+.dropdown:hover .submenu {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.submenu-items li a:hover {
-  background-color: #bfa45b;
-  color: #fff;
-  border-radius: 5px;
+/* Flechita dorada animada */
+.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  color: #bfa45b;
+  transition: transform 0.3s ease;
 }
 
-/* Mostrar el submenú al pasar el mouse */
-.submenu:hover .submenu-items {
-  display: block;
+.dropdown:hover > a::after {
+  transform: rotate(180deg);
 }
-
-/* Evita que el submenú corte su sombra */
-header {
-  overflow: visible;
-}
-/* ---- Ajuste Responsive ---- */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .submenu {
-    position: static;
-    box-shadow: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .dropdown:hover .submenu {
-    display: block;
-  }
-}
-/* ======== AJUSTE RESPONSIVE ======== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header nav {
-    margin-top: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-}
-
+✅ 3. Resultado esperado
 /* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
   background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)),
@@ -354,6 +335,7 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
 }
+
 
 
 
