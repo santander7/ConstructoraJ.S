@@ -231,66 +231,69 @@ section.dark h2 {
   letter-spacing: 0.5px;
 }
 
-/* ==== LIGHTBOX MODERNO Y RESPONSIVO (REEMPLAZO COMPLETO) ==== */
+/* ==== LIGHTBOX REPARADO Y AJUSTADO ==== */
 .lightbox {
   position: fixed;
   inset: 0;
   display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
   cursor: zoom-out;
+  overflow: hidden;
 }
 
 .lightbox.active {
   display: flex;
 }
 
-/* Imagen centrada y adaptable */
+/* Imagen ajustada estrictamente al tamaño de pantalla */
 .lightbox img {
-  max-width: 60%;
-  max-height: 70vh;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  width: auto;
+  height: auto;
+  max-width: 50vw;   /* 🔹 Mitad del ancho de la pantalla */
+  max-height: 70vh;  /* 🔹 70% de la altura visible */
+  border-radius: 14px;
   object-fit: contain;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
   animation: zoomIn 0.3s ease;
   transition: transform 0.3s ease;
 }
 
 .lightbox img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Animación de aparición */
+/* Animación */
 @keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
+  from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
-/* ======== AJUSTE RESPONSIVO ======== */
+/* === RESPONSIVE === */
 
 /* Celulares */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .lightbox img {
-    max-width: 90%;
+    max-width: 85vw;  /* 🔹 Mucho más pequeña en pantallas pequeñas */
     max-height: 60vh;
   }
 }
 
 /* Tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
   .lightbox img {
-    max-width: 75%;
+    max-width: 65vw;
     max-height: 65vh;
   }
 }
 
-/* Escritorio grande */
+/* Escritorios grandes */
 @media (min-width: 1025px) {
   .lightbox img {
-    max-width: 55%;
+    max-width: 45vw;
     max-height: 70vh;
   }
 }
@@ -423,6 +426,7 @@ footer {
     text-align: center;
   }
 }
+
 
 
 
