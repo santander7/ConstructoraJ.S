@@ -3,18 +3,18 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f4f4f4;
-  color: #1a1a1a;
+  color: #222;
 }
 
 /* ======== ENCABEZADO ======== */
 header {
-  background: linear-gradient(90deg, #0b1b3a, #13264d, #1f376b);
-  color: white;
+  background-color: #ffffff; /* Blanco para combinar con el logo */
+  color: #0b1b3a;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 70px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -34,9 +34,8 @@ header h1 {
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  color: #f5f5f5;
+  color: #0b1b3a;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* ======== MENÚ DE NAVEGACIÓN ======== */
@@ -46,21 +45,22 @@ header nav {
 }
 
 header nav a {
-  color: #f2f2f2;
+  color: #0b1b3a;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav a:hover {
-  color: #d4af37;
+  color: #d4af37; /* Dorado */
   transform: scale(1.1);
 }
 
-/* ======== SECCIÓN HERO ======== */
+/* ======== SECCIÓN HERO (QUIÉNES SOMOS) ======== */
 .hero {
   background: linear-gradient(rgba(11, 27, 58, 0.8), rgba(11, 27, 58, 0.8)),
               url("img/fondo.jpg") center/cover no-repeat;
+  position: relative;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -71,8 +71,7 @@ header nav a:hover {
 }
 
 .hero .overlay {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(212, 175, 55, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   padding: 60px 50px;
   border-radius: 20px;
   max-width: 900px;
@@ -86,17 +85,20 @@ header nav a:hover {
   box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
 }
 
-/* ---- TÍTULO ANIMADO DORADO ---- */
+/* ---- TÍTULO DORADO ANIMADO ---- */
 .hero h2 {
   font-size: 2.8rem;
   margin-bottom: 25px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, #d4af37 0%, #f7e59b 50%, #d4af37 100%);
+  background: linear-gradient(90deg, #d4af37 0%, #f9e7a1 50%, #d4af37 100%);
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 
+    0 0 12px rgba(255, 255, 255, 0.2),
+    0 0 25px rgba(212, 175, 55, 0.2);
   animation: shine 4s linear infinite;
 }
 
@@ -120,7 +122,7 @@ header nav a:hover {
   max-width: 600px;
   padding: 12px 16px;
   font-size: 1rem;
-  border: 2px solid #0b1b3a;
+  border: 2px solid #ccc;
   border-radius: 25px;
   transition: 0.3s;
 }
@@ -128,7 +130,7 @@ header nav a:hover {
 .buscador input:focus {
   outline: none;
   border-color: #d4af37;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
 /* ======== SERVICIOS ======== */
@@ -142,7 +144,6 @@ section.light h2 {
   font-size: 2rem;
   margin-bottom: 30px;
   color: #0b1b3a;
-  text-transform: uppercase;
 }
 
 .servicio {
@@ -155,7 +156,7 @@ section.light h2 {
 }
 
 .servicio:hover {
-  background: #fff9e6;
+  background: #fff8e1;
   transform: translateY(-5px);
 }
 
