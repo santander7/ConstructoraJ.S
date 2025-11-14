@@ -225,7 +225,6 @@ section.light h2 {
   opacity: 1;
   pointer-events: auto;
 }
-}
 
 .modal-servicio-contenido {
   background: #fff;
@@ -240,12 +239,13 @@ section.light h2 {
 
 
 /* Botón de cerrar */
-.cerrar-servicio {
-  float: right;
-  font-size: 25px;
+ .cerrar-servicio {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
   cursor: pointer;
 }
-
 /* animación */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
@@ -363,6 +363,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
