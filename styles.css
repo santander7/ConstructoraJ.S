@@ -227,29 +227,30 @@ section.light h2 {
 }
 
 .modal-servicio-contenido {
+  position: relative;   /* NECESARIO PARA EL BOTÓN */
   background: #fff;
   padding: 30px;
   border-radius: 15px;
-  max-width: 500px;   /* ANTES: 600px o 90% */
+  max-width: 500px;
   width: 100%;
   text-align: center;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
   animation: fadeIn 0.3s ease-in-out;
 }
 
-
 /* Botón de cerrar */
- .cerrar-servicio {
+.cerrar-servicio {
   position: absolute;
   top: 12px;
   right: 15px;
   font-size: 24px;
   cursor: pointer;
 }
-/* animación */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
+}
 }
 /* ======== DETALLE DE SERVICIO (NUEVO) ======== */
 .servicio-detalle {
@@ -363,6 +364,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
