@@ -200,47 +200,44 @@ section.light h2 {
   color: #bfa45b;
 }
 
-/* ===== MODAL DE SERVICIOS ===== */
-
+/* -------- MODAL SERVICIOS -------- */
 .modal-servicio {
-  display: none;
+  display: none; /* IMPORTANTE: inicia oculto */
   position: fixed;
-  z-index: 2000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+  backdrop-filter: blur(4px); /* efeco bonito */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .modal-servicio-contenido {
-  background: #f2f2f2;
+  background: #fff;
   padding: 30px;
-  width: 90%;
-  max-width: 500px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  animation: aparecer 0.25s ease-out;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-@keyframes aparecer {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
+/* Botón de cerrar */
 .cerrar-servicio {
-  font-size: 35px;
   float: right;
+  font-size: 25px;
   cursor: pointer;
-  color: #333;
-  transition: 0.2s;
 }
 
-.cerrar-servicio:hover {
-  color: #bfa45b;
+/* animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 /* ======== DETALLE DE SERVICIO (NUEVO) ======== */
 .servicio-detalle {
@@ -354,6 +351,7 @@ footer {
   display: block;
   visibility: hidden;
 }
+
 
 
 
