@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('.hamburguesa');
-  const menuMovil = document.querySelector('.menu-desktop'); // ← SOLUCIÓN
+  const menuMovil = document.querySelector('#menuMovil');  
 
   if (!btn || !menuMovil) return;
 
@@ -23,3 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
