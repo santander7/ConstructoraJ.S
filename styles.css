@@ -1,66 +1,54 @@
-/* ================================
-   RESET
-================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* =========================================
+   ESTILOS BASE - TEMA CLARO
+========================================= */
 body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
   color: #222;
-  line-height: 1.6;
 }
 
-/* ================================
-   HEADER
-================================ */
 header {
   width: 100%;
-  background: #000;
-  padding: 20px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.contenedor {
-  width: 90%;
-  max-width: 1300px;
-  margin: auto;
+  background: #ffffff;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.logo img {
-  width: 150px;
-  height: auto;
+/* LOGO */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
 }
 
-/* ================================
-   MENÚ DESKTOP
-================================ */
-nav ul {
-  list-style: none;
+/* MENÚ DESKTOP */
+.menu {
   display: flex;
-  gap: 25px;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
 }
 
-nav ul li a {
+.menu a {
   text-decoration: none;
-  color: #fff;
+  color: #111;
   font-weight: 600;
-  padding: 10px;
+  transition: .3s;
 }
 
-nav ul li a:hover {
-  color: #d6d6d6;
+.menu a:hover {
+  color: #0a66c2;
 }
 
+/* SUBMENÚ (solo PC) */
 .dropdown {
   position: relative;
 }
@@ -68,246 +56,121 @@ nav ul li a:hover {
 .submenu {
   display: none;
   position: absolute;
-  background: #111;
-  list-style: none;
-  width: 180px;
-  top: 40px;
-  left: 0;
+  background: #fff;
   padding: 10px 0;
-}
-
-.submenu li a {
-  display: block;
-  padding: 8px 15px;
-  color: #fff;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .dropdown:hover .submenu {
   display: block;
 }
 
-/* ================================
-   MENÚ HAMBURGUESA (MÓVIL)
-================================ */
+.submenu li a {
+  color: #111;
+  padding: 10px 20px;
+  display: block;
+}
+
+.submenu li a:hover {
+  background: #f2f2f2;
+}
+
+/* =========================================
+   BOTÓN HAMBURGUESA (solo móvil)
+========================================= */
 .hamburguesa {
   display: none;
-  color: #fff;
   font-size: 32px;
+  color: #111;
   cursor: pointer;
 }
 
-.menu {
-  transition: max-height 0.3s ease;
-}
-
-/* ================================
-   HERO
-================================ */
-.hero {
-  width: 100%;
+/* =========================================
+   MENÚ DESDE LA DERECHA (MÓVIL)
+========================================= */
+.menu-movil {
+  position: fixed;
+  top: 0;
+  right: -100%;
   height: 100vh;
-  background: url("IMG/PORTADA.png") no-repeat center center/cover;
+  width: 70%;
+  background: #ffffff;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+  padding: 80px 30px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 120px;
+  flex-direction: column;
+  gap: 20px;
+  transition: right .35s ease-in-out;
+  z-index: 999;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.55);
-  padding: 40px;
-  max-width: 700px;
-  border-radius: 15px;
-  text-align: center;
-  color: #fff;
+.menu-movil.activo {
+  right: 0;
 }
 
-.overlay h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.overlay p {
+.menu-movil a {
   font-size: 1.2rem;
+  color: #111;
+  text-decoration: none;
+  padding: 8px 0;
 }
 
-/* ================================
-   QUIÉNES SOMOS
-================================ */
-.section-quienes {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto;
+.menu-movil .submenu {
+  display: none;
+  background: #f8f8f8;
+  padding-left: 20px;
+  border-left: 4px solid #0a66c2;
 }
 
-.section-quienes h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.menu-movil .submenu.activo {
+  display: block;
 }
 
-.section-quienes p {
+/* =========================================
+   HERO RESPONSIVE
+========================================= */
+.hero {
+  margin-top: 80px;
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  color: #111;
+}
+
+.hero p {
   font-size: 1.1rem;
-  margin-bottom: 15px;
-  text-align: justify;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
 }
 
-/* ================================
-   SERVICIOS
-================================ */
-.servicios {
-  width: 90%;
-  max-width: 1200px;
-  margin: 70px auto;
-}
-
-.titulo-servicios {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.4rem;
-}
-
-.contenedor-servicios {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.servicio {
-  width: 30%;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px #ccc;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.servicio i {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.servicio h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-/* ================================
-   PROYECTOS
-================================ */
-.proyectos {
-  width: 90%;
-  max-width: 1200px;
-  margin: 70px auto;
-}
-
-.titulo-proyectos {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.4rem;
-}
-
-.contenedor-proyectos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-.proyecto {
-  width: 30%;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
-  text-align: center;
-}
-
-/* ================================
-   FOOTER
-================================ */
-footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 40px;
-  text-align: center;
-}
-
-/* =====================================================
-   RESPONSIVE — TABLET Y CELULARES
-===================================================== */
-@media (max-width: 992px) {
-  .servicio, .proyecto {
-    width: 45%;
-  }
-}
-
-/* ====================== CELULARES ===================== */
-@media (max-width: 768px) {
-
-  header {
-    padding: 15px 0;
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+  .menu {
+    display: none;
   }
 
   .hamburguesa {
     display: block;
   }
+}
 
-  nav ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #000;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  nav ul.activo {
-    max-height: 500px;
-    padding: 15px 0;
-  }
-
-  nav ul li {
-    padding: 12px 0;
-  }
-
-  .hero {
-    height: auto;
-    padding: 50px 20px;
-  }
-
-  .overlay {
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .overlay h2 {
+@media (max-width: 600px) {
+  .hero h1 {
     font-size: 1.9rem;
   }
 
-  .overlay p {
+  .hero p {
     font-size: 1rem;
-    text-align: justify;
-  }
-
-  .servicio, .proyecto {
-    width: 100%;
-  }
-
-  .submenu {
-    position: static;
-    background: #222;
-    width: 100%;
+    padding: 0 10px;
   }
 }
-
-
-
-
-
-
