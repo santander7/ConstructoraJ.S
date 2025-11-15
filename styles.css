@@ -408,7 +408,7 @@ img {
 
 .menu-movil a,
 .menu-movil p {
-  font-size: 1.1rem;
+  font-size: 1.rem;
   font-weight: 600;
   color: #0d1b2a;
   text-decoration: none;
@@ -503,6 +503,7 @@ img {
     display: none !important;
   }
 }
+
 
 
 
